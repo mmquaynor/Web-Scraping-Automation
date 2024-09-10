@@ -1,0 +1,109 @@
+
+# Import required libraries
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import openpyxl
+import os
+from datetime import datetime 
+
+
+# Configure WebDriver options
+options = webdriver.ChromeOptions()
+options.add_argument('--ignore-certificate-errors')
+options.add_argument('--ignore-ssl-errors')
+driver = webdriver.Chrome(options=options)
+
+# Navigate to the dashboard URL
+dashboard_url = "https://ls-server.ou.edu/dashboard"
+driver.get(dashboard_url)
+# Make the window full screen
+driver.maximize_window()
+
+# Locate the bag status widget by its ID
+bag_status_widget_id = "bagStatusWidget"
+bag_status_widget = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, bag_status_widget_id)))
+
+# Grab the HTML elements
+group_1_element = WebDriverWait(driver, 2).until(EC.presence_of_element_located((By.XPATH, "//*[contains(text(), '7:15a')]")))
+group_2_element = WebDriverWait(driver, 2).until(EC.presence_of_element_located((By.XPATH, "//*[contains(text(), '9:30a')]")))
+group_3_element = WebDriverWait(driver, 2).until(EC.presence_of_element_located((By.XPATH, "//*[contains(text(), '11:45a')]")))
+group_4_element = WebDriverWait(driver, 2).until(EC.presence_of_element_located((By.XPATH, "//*[contains(text(), '2:00p - 4:30p')]")))
+group_5_element = WebDriverWait(driver, 2).until(EC.presence_of_element_located((By.XPATH, "//*[contains(text(), '4:15p')]")))
+group_6_element = WebDriverWait(driver, 2).until(EC.presence_of_element_located((By.XPATH, "//*[contains(text(), '6:30p')]")))
+
+# Define indexes for group name and assigned name
+IDX_GROUP_NAME = 0
+IDX_ASSIGNED_NAME = 1
+
+# Split text content into tokens
+group_1_tokens = group_1_element.text.split("\n")
+group_2_tokens = group_2_element.text.split("\n")
+group_3_tokens = group_3_element.text.split("\n")
+group_4_tokens = group_4_element.text.split("\n")
+group_5_tokens = group_5_element.text.split("\n")
+group_6_tokens = group_6_element.text.split("\n")
+
+processing_array = [
+    group_1_tokens,
+    group_2_tokens,
+    group_3_tokens,
+    group_4_tokens,
+    group_5_tokens,
+    group_6_tokens,
+]
+
+# Find all percentage elements on the page
+all_percentage_elements = driver.find_elements(By.XPATH, "//*[contains(text(), '%')]")
+data_to_write = []
+
+# Capture the current time
+current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+print("Current time:", current_time)
+
+# For loop to capture the the group name and percentage complete
+for idx, group_tokens in enumerate(processing_array):
+    group_name = group_tokens[IDX_GROUP_NAME]
+    assigned_name = group_tokens[IDX_ASSIGNED_NAME] if len(group_tokens) == 2 else "Unassigned"
+    # Add one because overall tech check percentage is at index 0
+    percentage_text = all_percentage_elements[idx + 1].text
+    # Remove the '%' character and convert to float
+    percentage = float(percentage_text.strip('%'))
+    
+    print(group_name, assigned_name, percentage)
+    data_to_write.append([group_name, assigned_name, percentage, current_time])
+
+# Define the filename-update to your desired file name
+filename = r"C:\Users\quay0000\Desktop\dashboard_data3.xlsx"
+
+# Check if the file exists
+if os.path.exists(filename):
+    # Open the existing workbook
+    wb = openpyxl.load_workbook(filename)
+    # Check if 'Test' sheet exists
+    if "Test" in wb.sheetnames:
+        ws = wb["Test"]
+    else:
+        # Create a 'Test' sheet
+        ws = wb.create_sheet("Test")
+else:
+    # Create a new workbook
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.title = "Test"
+    # Write header row to the 'Test' sheet
+    header = ["Group Name", "Assigned Name", "Percentage", "Time Captured"]
+    ws.append(header)
+
+# Write data to the 'Test' sheet
+for row in data_to_write:
+    ws.append(row)
+
+# Save the workbook with the desired filename
+wb.save(filename)
+
+# Close the browser
+driver.quit()
+
+
