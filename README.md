@@ -8,7 +8,7 @@
 
 ## Developer Setup
 
-Python, Openpyxl Selinium are  required for development. Python is used to
+Python, Openpyxl and Selinium are  required for development. Python is used to
 run code and tests. Selinium is to scrape the web and Openpyxl is used to open and store data in the excel file.
 
 ### Conda
