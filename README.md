@@ -4,11 +4,12 @@
 
 - Python 3.12 or greater
 - Selinium
+- Openpyxl
 
 ## Developer Setup
 
-Python and Selinium are both required for development. Python is used to
-run code and tests. Selinium is to scrape the web.
+Python, Openpyxl Selinium are  required for development. Python is used to
+run code and tests. Selinium is to scrape the web and Openpyxl is used to open and store data in the excel file.
 
 ### Conda
 
@@ -16,8 +17,8 @@ Create a Conda or Mamba environment using [environment.yml](/environment.yml).
 
 `environment.yml` includes the following information:
 
-- Environment name: `Dashboarf`
-- Environment dependencies: Python and Selenium
+- Environment name: `Webscrapping_env`
+- Environment dependencies: Python , Selenium and Openpyxl
 
 These tools are available in many distributions, including the following:
 
@@ -28,7 +29,8 @@ These tools are available in many distributions, including the following:
 
 ```shell
 conda env create --file=environment.yml
-conda activate gsdl
+conda activate Webscrapping_env
 ```
+# Run the code by schduling or running directly.
 
 
