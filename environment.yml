@@ -1,4 +1,4 @@
-name: selenium_env
+name: Webscrapping_env
 channels:
   - defaults
 dependencies:
