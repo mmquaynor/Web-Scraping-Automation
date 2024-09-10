@@ -1,4 +1,8 @@
-# Webscapper for Dashboard
+# Web Scraping and Automation Project
+
+## Project Overview
+
+This project involves scraping data from a web source and automating the process of data summarization and reporting using Python, Power Query, and Power Automate.
 
 ## Developer Requirements
 
