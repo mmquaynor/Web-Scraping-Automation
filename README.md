@@ -16,7 +16,7 @@ Create a Conda or Mamba environment using [environment.yml](/environment.yml).
 
 `environment.yml` includes the following information:
 
-- Environment name: `gsdl`
+- Environment name: `Dashboarf`
 - Environment dependencies: Python and Selenium
 
 These tools are available in many distributions, including the following:
