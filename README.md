@@ -50,7 +50,30 @@ python scrape.py
 
 4. Click the Actions tab and click New.
 
-5. Set the Action to Start a program. Set the Program/Script to the path of your Python executable (python.exe). Add the path to scrape.py in the Add arguments field.
+## Using Power Query to Summarize Data
 
-6. Click OK to save the task.
+1. **Summarize Data with Power Query**
+
+   The Excel file uses Power Query to summarize weekly data for the dashboard.
+
+2. **Update Queries**
+
+   To update the queries, click on **Queries & Connections** in the Excel file:
+
+   ![Queries & Connections](https://github.com/user-attachments/assets/0a8fb5b1-b314-4f61-93b4-60e89d1de69c)
+
+3. **Add a Custom Query**
+
+   You can add a custom query similar to the one shown below:
+
+   ![Custom Query](https://github.com/user-attachments/assets/ae872101-8ea1-4994-a3fa-0f67c2bd12e0)
+
+4. **Refresh Data**
+
+   To run the query and refresh the data, click **Refresh All** under the **Data** tab in the Excel file. Ensure that the source is the appropriate location where your dashboard file is stored:
+
+   ![Refresh Data](https://github.com/user-attachments/assets/11dffed8-a361-47b8-9caf-4d386f80d1f8)
+
+
+
 
