@@ -25,7 +25,7 @@ These tools are available in many distributions, including the following:
 - [Miniconda](https://docs.anaconda.com/free/miniconda/index.html) provides a
   minimal installer for Conda
 
-####Create and activate an Environment with Conda
+###Create and activate an Environment with Conda
 
 ```shell
 conda env create --file=environment.yml
