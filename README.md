@@ -75,5 +75,25 @@ python scrape.py
    ![Refresh Data](https://github.com/user-attachments/assets/11dffed8-a361-47b8-9caf-4d386f80d1f8)
 
 
+## Sending Summarized Data by Email Using Power Automate
+
+### Access Power Automate
+
+- Go to [Power Automate](https://flow.microsoft.com/).
+
+### Create a New Flow
+
+1. Click on **Create** and choose **Automated flow**.
+2. Provide a name for your flow and select a trigger. For example, you might use a schedule trigger to run the flow at specific times.
+
+### Add Actions to the Flow
+
+- **Get File Content**: Use the **Get file content** action to retrieve the Excel file from your storage location.
+- **Send Email**: Use the **Send an email (V2)** action to send the summarized data. Configure the email with the recipient, subject, and body. Attach the Excel file if necessary.
+
+### Test and Save the Flow
+
+1. Test your flow to ensure that it works as expected.
+2. Save and activate the flow to automate the process of sending the summarized data via email.
 
 
