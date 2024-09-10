@@ -31,10 +31,11 @@ These tools are available in many distributions, including the following:
 conda env create --file=environment.yml
 conda activate Webscrapping_env
 ```
-# Run the code by schduling or running directly.
-You can run the file by downloding the activating the python environment and running the scrape.py file direcly.Alternatively you can use Windows Task schduler to automate running the file.
-## Running Manually
+# Running the Script
 
+You can run the script manually or schedule it to run automatically using the Windows Task Scheduler.
+
+## Running Manually
 1. Download and activate the Python environment.
 2. Run the scrape.py file directly using:
 ```shell
