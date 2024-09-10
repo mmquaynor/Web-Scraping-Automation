@@ -44,10 +44,11 @@ You can run the file by downloding the activating the python environment and run
 
 3.  Specify a Name for the task and add the triggers to run at a specific time
 ![image](https://github.com/user-attachments/assets/e8d1e4a3-5d51-4d10-9670-bf7088a1c841)
-4.  Click the Actions tab and click New
-5.  
+
+4.  Click the Actions tab and click New 
  ![image](https://github.com/user-attachments/assets/0df58a5e-9564-4dcc-a29d-355ee5414b97)
  
-6.  Set the Action to Start a program.  The Program/Script needs to be set to the path of your python executable (python.exe).Add the path to the scrape.py as the Add arguments.
+5.  Set the Action to Start a program.  The Program/Script needs to be set to the path of your python executable (python.exe).Add the path to the scrape.py as the Add arguments.
 ![image](https://github.com/user-attachments/assets/cd0e31d2-1105-494b-a6a5-a80abee998f7)
+
 The script should be work after hitting ok to save the file.
