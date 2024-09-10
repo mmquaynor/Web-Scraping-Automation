@@ -33,22 +33,23 @@ conda activate Webscrapping_env
 ```
 # Run the code by schduling or running directly.
 You can run the file by downloding the activating the python environment and running the scrape.py file direcly.Alternatively you can use Windows Task schduler to automate running the file.
-## The steps for using the windows task Schduler are below:
-1.  Go Start and search for Task Scheduler
+## Running Manually
 
-![image](https://github.com/user-attachments/assets/2189ba29-8c6b-4e3a-a053-292dca336459)
+1. Download and activate the Python environment.
+2. Run the scrape.py file directly using:
+```shell
+python scrape.py
+```
+## Automating with Windows Task Scheduler 
+1. Go to Start and search for Task Scheduler.
 
-2.  Under the Actions panein the top right corner , click Create Task
+2. Under the Actions pane in the top right corner, click Create Task.
 
-![image](https://github.com/user-attachments/assets/16e99ebe-4c1d-4cf0-b1e9-d15d5dbfc36f)
+3. Specify a Name for the task and add the Triggers to set the task to run at a specific time.
 
-3.  Specify a Name for the task and add the triggers to run at a specific time
-![image](https://github.com/user-attachments/assets/e8d1e4a3-5d51-4d10-9670-bf7088a1c841)
+4. Click the Actions tab and click New.
 
-4.  Click the Actions tab and click New 
- ![image](https://github.com/user-attachments/assets/0df58a5e-9564-4dcc-a29d-355ee5414b97)
- 
-5.  Set the Action to Start a program.  The Program/Script needs to be set to the path of your python executable (python.exe).Add the path to the scrape.py as the Add arguments.
-![image](https://github.com/user-attachments/assets/cd0e31d2-1105-494b-a6a5-a80abee998f7)
+5. Set the Action to Start a program. Set the Program/Script to the path of your Python executable (python.exe). Add the path to scrape.py in the Add arguments field.
 
-The script should be work after hitting ok to save the file.
+6.Click OK to save the task.
+
