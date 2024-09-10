@@ -1,0 +1,9 @@
+name: selenium_env
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - openpyxl
+  - pip:
+      - selenium==4.14.0
