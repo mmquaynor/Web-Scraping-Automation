@@ -51,5 +51,5 @@ python scrape.py
 
 5. Set the Action to Start a program. Set the Program/Script to the path of your Python executable (python.exe). Add the path to scrape.py in the Add arguments field.
 
-6.Click OK to save the task.
+6. Click OK to save the task.
 
