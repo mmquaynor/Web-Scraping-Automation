@@ -6,4 +6,4 @@ dependencies:
   - pip
   - openpyxl
   - pip:
-      - selenium==4.14.0
+      - selenium==4.23.0
